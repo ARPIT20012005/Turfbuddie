@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/components/Button";
 import coursorYouImage from "@/assets/images/cursor-you.svg";
 
 export default function Hero() {

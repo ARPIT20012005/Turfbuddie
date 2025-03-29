@@ -1,5 +1,4 @@
 "use client";
-import FeatureCard from "@/components/FeatureCard";
 import Tag from "@/components/Tag";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -9,12 +8,8 @@ import { Turf } from "@/types";
 import { motion } from "framer-motion";
 
 const isValidUrl = (url: string) => {
-  try {
-    new URL(url);
-    return true;
-  } catch (error) {
-    return false;
-  }
+  new URL(url);
+  return true;
 };
 
 const cardVariants = {

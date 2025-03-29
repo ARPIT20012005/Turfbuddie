@@ -7,6 +7,7 @@ import { Turf } from "@/types";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const sportsTypes = [
   "Football",
@@ -52,7 +53,7 @@ export default function Features() {
               className="md:col-span-2 lg:col-span-1 group"
               description={""}
             >
-              <img
+              <Image
                 src="https://i.pinimg.com/736x/d0/d8/c7/d0d8c74090e438ac7c2b4703841b1993.jpg"
                 alt={turf.name}
                 className="w-full h-40 object-cover rounded-lg mb-4"
