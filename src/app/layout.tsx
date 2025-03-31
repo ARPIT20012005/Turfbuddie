@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-// import localFont from "next/font/local";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -9,21 +8,9 @@ const inter = Inter({
   display: "swap",
   axes: ["opsz"],
 });
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
 export const metadata: Metadata = {
-  title: "Modern Design Tool Landing Page",
-  description: "Created with the help of Frontend Tribe",
+  title: "Turf Buddie",
+  description: "Turf Buddie help you to find the best turf for your needs.",
 };
 
 export default function RootLayout({

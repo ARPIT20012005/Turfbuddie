@@ -1,10 +1,22 @@
 "use client";
 import { AnimationPlaybackControls, motion, useAnimate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+
 export default function CallToAction() {
   const [isHovered, setIsHovered] = useState(false);
   const animation = useRef<AnimationPlaybackControls>();
   const [scope, animate] = useAnimate();
+
+  const apkFilePath = "/app-release.apk";
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = apkFilePath;
+    link.download = "Turfbuddie.apk";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   useEffect(() => {
     animation.current = animate(
@@ -12,8 +24,6 @@ export default function CallToAction() {
       { x: "-50%" },
       { duration: 30, ease: "linear", repeat: Infinity }
     );
-
-    // animation.current.speed =0.5
   }, [animate, scope]);
 
   useEffect(() => {
@@ -39,9 +49,10 @@ export default function CallToAction() {
             <div
               className="flex items-center gap-16"
               key={i}
+              onClick={handleDownload}
             >
               <span className="text-lime-400 text-7xl">&#10038;</span>
-              <span className="group-hover:text-lime-400">Check it out </span>
+              <span className="group-hover:text-lime-400">Download Now </span>
             </div>
           ))}
         </motion.div>

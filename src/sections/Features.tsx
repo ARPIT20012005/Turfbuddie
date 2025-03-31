@@ -10,13 +10,12 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const sportsTypes = [
-  "Football",
-  "Cricket",
-  "Badminton",
-  "Basketball",
-  "Tennis",
-  "Volleyball",
-  "Multi-sport",
+  "The zion - multisports turf",
+  "Shree balaji turf",
+  "Cc turf ram nagar hill top",
+  "Game on sports turf",
+  "Run bhumi turf",
+  "Sf multisports rooftop turf",
 ];
 
 export default function Features() {
@@ -46,9 +45,9 @@ export default function Features() {
         </h2>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4 lg:grid-cols-3 gap-8">
-          {turfs.slice(0, 3).map((turf) => (
+          {turfs.slice(0, 3).map((turf, index) => (
             <FeatureCard
-              key={turf.id}
+              key={`${turf.id}-${index}`}
               title={turf.name}
               className="md:col-span-2 lg:col-span-1 group"
               description={""}
@@ -56,6 +55,8 @@ export default function Features() {
               <Image
                 src="https://i.pinimg.com/736x/d0/d8/c7/d0d8c74090e438ac7c2b4703841b1993.jpg"
                 alt={turf.name}
+                width={400}
+                height={160}
                 className="w-full h-40 object-cover rounded-lg mb-4"
               />
               <div className="flex items-center mb-3">

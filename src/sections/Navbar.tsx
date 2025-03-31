@@ -4,6 +4,7 @@ import logoImage from "@/assets/images/logo.png";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { AnimatePresence, motion } from "framer-motion";
+import Tag from "@/components/Tag";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -13,12 +14,21 @@ const navLinks = [
     href: "https://www.instagram.com/turfbuddie",
   },
   { label: "X", href: "https://x.com/TurfBuddie?s=08" },
-  // { label: "Integrations", href: "#integrations" },
-  // { label: "FAQs", href: "#faqs" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const apkFilePath = "/app-release.apk";
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = apkFilePath;
+    link.download = "Turfbuddie.apk";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -34,17 +44,21 @@ export default function Navbar() {
                 />
               </div>
 
-              <div className="hidden lg:flex justify-center items-center">
-                <nav className="flex items-center gap-6 font-medium">
+              <div className="hidden lg:flex justify-center items-center gap-8">
+                <nav className="flex items-center gap-8 font-medium text-white">
                   {navLinks.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
+                      className="hover:text-lime-400 transition-colors duration-200"
                     >
                       {link.label}
                     </a>
                   ))}
                 </nav>
+                <div className="flex justify-end gap-4">
+                  <Tag onClick={handleDownload}>Download</Tag>
+                </div>
               </div>
 
               <div className="flex justify-end gap-4">
@@ -113,6 +127,9 @@ export default function Navbar() {
                         {link.label}
                       </a>
                     ))}
+                    <div className="flex justify-end gap-4">
+                      <Tag onClick={handleDownload}>Download</Tag>
+                    </div>
                   </div>
                 </motion.div>
               )}
