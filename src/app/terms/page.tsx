@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
     <div className="min-h-screen bg-black py-12 px-4 sm:px-6 lg:px-8">
       <Navbar />
       <Head>
-        <title>Terms and Conditions – Turf Buddie</title>
+        <title>Terms and Conditions :– Turf - Buddie</title>
         <meta
           name="description"
           content="Turf Buddie Terms and Conditions"
