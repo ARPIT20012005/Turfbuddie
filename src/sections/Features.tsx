@@ -78,7 +78,7 @@ export default function Features() {
                 <span className="text-lime-400 font-bold text-lg">
                   ₹{turf.price}/hr
                 </span>
-                <Link href={`/`}>
+                <Link href={`/book`}>
                   <button className="bg-lime-400 hover:bg-lime-500 text-black px-4 py-2 rounded-lg text-sm font-bold transition-all duration-200 hover:shadow-lg hover:shadow-lime-400/20">
                     Book Now
                   </button>
